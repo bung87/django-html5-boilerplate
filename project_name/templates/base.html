@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load i18n %}
+        {% load static from cdn_finder_tags  %}
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -11,10 +12,10 @@
         <meta name="description" content="{% block meta_description %}{% endblock %}" />
         <meta name="author" content="{% block meta_author %}{% endblock %}" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
+        <link rel="stylesheet" href="{% static 'http://necolas.github.com/normalize.css/3.0.1/normalize.css' %}" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
         {% block css %}{% endblock %}
-        <script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="{% static 'js/modernizr/2.8.2/modernizr.min.js' %}"></script>
     </head>
     <body class="{% block body_class %}{% endblock %}">
     {% block body %}
@@ -24,7 +25,7 @@
         {% block content %}
         {% endblock content %}
         {% block javascript_library %}
-        <script src="{{ STATIC_URL }}js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="{% static 'js/jquery/2.1.1/jquery.min.js' %}"></script>
         <script src="{{ STATIC_URL }}js/plugins.js"></script>
         <script src="{{ STATIC_URL }}js/main.js"></script>
         {% endblock javascript_library %}
