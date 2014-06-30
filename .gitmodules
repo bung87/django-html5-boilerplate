@@ -1,0 +1,3 @@
+[submodule "django-cdn-finder"]
+	path = django-cdn-finder
+	url = https://github.com/bung87/django-cdn-finder/
