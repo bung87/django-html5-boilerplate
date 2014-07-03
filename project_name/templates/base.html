@@ -12,8 +12,12 @@
         <meta name="description" content="{% block meta_description %}{% endblock %}" />
         <meta name="author" content="{% block meta_author %}{% endblock %}" />
         <meta name="viewport" content="width=device-width" />
+        {% if debug %}
         <link rel="stylesheet" href="{% static 'http://necolas.github.com/normalize.css/3.0.1/normalize.css' %}" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+        {% else %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.min.css" />
+        {% endif %}
         {% block css %}{% endblock %}
         <script src="{% static 'js/modernizr/2.8.2/modernizr.min.js' %}"></script>
     </head>
@@ -26,8 +30,12 @@
         {% endblock content %}
         {% block javascript_library %}
         <script src="{% static 'js/jquery/2.1.1/jquery.min.js' %}"></script>
+        {% if debug %}
         <script src="{{ STATIC_URL }}js/plugins.js"></script>
         <script src="{{ STATIC_URL }}js/main.js"></script>
+        {% else %}
+        <script src="{{ STATIC_URL }}js/main.min.js"></script>
+        {% endif %}
         {% endblock javascript_library %}
         {% block javascript %}
         {% endblock javascript %}
